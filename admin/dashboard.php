@@ -25,7 +25,7 @@ include('titlehead.php');
       <a href="deleteStudent.php">Delete Student Details</a>
     </div>
   </div>
-  <h3 class="text-end mt-3"><a class="btn btn-danger " href="../admin/logout.php">Log Out</a> </h3>
+
 </div>
 
 <?php include('footer.php')?>
