@@ -16,7 +16,7 @@ include('titlehead.php');
 <div class="container mt-5">
   <div class="row">
     <div class="col-8 offset-2">
-      <form action="" method="post" enctype="multipart/form">
+      <form action="" method="post" enctype="multipart/form-data">
         <table class="table table-bordered table-responsive table-striped">
           <tbody>
             <tr>
@@ -41,7 +41,7 @@ include('titlehead.php');
             </tr>
             <tr>
               <th>Image</th>
-              <td> <input type="file" name="img" id=""> </td>
+              <td> <input type="file" name="image" id=""> </td>
             </tr>
             <tr>
               <td colspan="2"> <input class="btn btn-primary" type="submit" value="Submit" name="submit"> </td>
@@ -56,13 +56,18 @@ include('titlehead.php');
       
       if(isset($_POST['submit'])){
 
-        $roll = $_POST['roll'];
-        $name = $_POST['name'];
-        $city = $_POST['city'];
-        $contact = $_POST['contact'];
-        $class = $_POST['class'];
+        $roll       = $_POST['roll'];
+        $name       = $_POST['name'];
+        $city       = $_POST['city'];
+        $contact    = $_POST['contact'];
+        $class      = $_POST['class'];
+        $imageName      = $_FILES['image']['name'];
+        $tempimage      = $_FILES['image']['tmp_name'];
 
-        $query = "INSERT INTO `students`( `roll`, `name`, `city`, `contact`, `class`) VALUES ('$roll','$name','$city','$contact','$class')";
+        $image=rand(0,500000).'_'.$imageName; 
+        move_uploaded_file($tempimage, "../img/".$image);
+
+        $query = "INSERT INTO `students`( `roll`, `name`, `city`, `contact`, `class`,`image`) VALUES ('$roll','$name','$city','$contact','$class','$image')";
 // echo $query;
         $res = mysqli_query($db, $query);
 
