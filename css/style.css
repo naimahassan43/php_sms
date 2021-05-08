@@ -1,0 +1,21 @@
+.title {
+    background: #014c57;
+    color: #fff;
+    padding: 40px;
+}
+
+.dash-cont {
+    padding: 50px 0;
+}
+
+.dash-cont>div {
+    padding: 45px;
+    background: #5fd3e2;
+}
+
+.dash-cont>div>a {
+    font-size: 16px;
+    font-weight: 700;
+    color: #221e1e;
+    text-decoration: none !important;
+}
