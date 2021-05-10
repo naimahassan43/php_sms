@@ -16,7 +16,7 @@ include('titlehead.php');
 <div class="container mt-5">
   <div class="row">
     <div class="col-8 offset-2">
-      <form action="" method="post" enctype="multipart/form-data">
+      <form action="addStudent.php" method="post" enctype="multipart/form-data">
         <table class="table table-bordered table-responsive table-striped">
           <tbody>
             <tr>

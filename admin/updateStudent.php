@@ -80,7 +80,9 @@ include('titlehead.php');
           </td>
           <td><?php echo $row['name'];?></td>
           <td><?php echo $row['roll'];?></td>
-          <td>Edit</td>
+          <td>
+            <a class="btn btn-info " href="edit.php?uid=<?php echo $row['id'];?>">Edit</a>
+          </td>
         </tr>
 
         <?php
