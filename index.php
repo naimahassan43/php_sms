@@ -1,4 +1,8 @@
-<?php include('admin/header.php')?>
+<?php 
+include('db.php');
+include('admin/header.php');
+
+?>
 
 <h3 class="text-end m-5"><a href="login.php">Admin Login</a> </h3>
 <h1 class="text-center">Welcome to the Student Management System</h1>
@@ -10,7 +14,7 @@
 
         <div class="row mb-3">
           <div class="col-sm-10">
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" name="class">
               <option selected>Select Class</option>
               <option value="1">1st</option>
               <option value="2">2nd</option>
@@ -27,13 +31,21 @@
           </div>
         </div>
         <input type="submit" class="btn btn-primary" name="submit" id="" value="Show Information">
-
-
-
       </form>
-
     </div>
   </div>
 </div>
+<?php
 
+if(isset($_POST['submit'])){
+  
+  $roll =$_POST['roll'];
+  $class =$_POST['class'];
+  
+  include('function.php');
+  showDetails($roll,$class); 
+}
+
+
+?>
 <?php include('admin/footer.php');?>
